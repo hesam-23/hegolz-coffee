@@ -1,0 +1,88 @@
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.category-tabs button {
+  padding: 8px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--white);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: all 0.2s;
+}
+
+.category-tabs button.active {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.category-tabs button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.category-tabs button.active:hover {
+  color: var(--white);
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--light);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.menu-item:hover {
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+.item-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.item-price {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 16px;
+}
+
+.menu-item button {
+  padding: 6px 16px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.menu-item button:hover {
+  background-color: var(--accent);
+}

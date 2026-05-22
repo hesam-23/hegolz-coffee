@@ -1,0 +1,107 @@
+.order-type {
+  margin-bottom: 28px;
+}
+
+.order-type label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+
+.order-type-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.order-type-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--light);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: all 0.2s;
+}
+
+.order-type-buttons button.active {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.order-type-buttons button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.order-type-buttons button.active:hover {
+  color: var(--white);
+}
+
+.payment-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.place-order-btn:hover {
+  background-color: var(--accent);
+}
+
+.place-order-btn:disabled {
+  background-color: var(--border);
+  color: var(--text-soft);
+  cursor: not-allowed;
+}
+
+.order-success {
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.order-success h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  border: none;
+  text-transform: none;
+}
+
+.order-success p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+}
+
+.order-success strong {
+  color: var(--text-main);
+}

@@ -1,0 +1,80 @@
+.state-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.state-selector label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.state-selector select {
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  background: var(--light);
+  color: var(--text-main);
+  transition: border 0.2s;
+}
+
+.state-selector select:focus {
+  border-color: var(--primary);
+}
+
+.invoice-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.invoice-row.total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border-bottom: none;
+  margin-top: 8px;
+  padding-top: 16px;
+}
+.print-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  border-radius: 4px;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.print-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.print-btn:disabled {
+  border-color: var(--border);
+  color: var(--text-soft);
+  cursor: not-allowed;
+}
