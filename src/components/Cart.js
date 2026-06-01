@@ -1,10 +1,14 @@
 import React from 'react';
 import '../styles/Cart.css';
 
-function Cart({ cartItems, onIncrease, onDecrease, onRemove }) {
+function Cart({ cartItems, onIncrease, onDecrease, onRemove, onNext, onPrev }) {
   return (
     <div className="cart-column">
-      <h2>Cart</h2>
+      <div className="column-header">
+        <button className="nav-prev mobile-only" onClick={onPrev}>← Back</button>
+        <h2>Cart</h2>
+        <button className="nav-next mobile-only" onClick={onNext}>Next →</button>
+      </div>
 
       {cartItems.length === 0 ? (
         <p className="empty-cart">Your cart is empty</p>

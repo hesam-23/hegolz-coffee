@@ -7,12 +7,9 @@ import Header from './components/Header';
 import OrderHistory from './components/OrderHistory';
 import './styles/App.css';
 
-const COLUMNS = ['Menu', 'Cart', 'Invoice', 'Payment'];
-
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [selectedState, setSelectedState] = useState('');
-  const [activeColumn, setActiveColumn] = useState(0);
   const [orders, setOrders] = useState(() => {
     const saved = localStorage.getItem('hegolz-orders');
     return saved ? JSON.parse(saved) : [];
@@ -65,7 +62,6 @@ function App() {
   };
 
   const scrollToColumn = (index) => {
-    setActiveColumn(index);
     if (scrollRef.current) {
       const columnWidth = scrollRef.current.offsetWidth;
       scrollRef.current.scrollTo({
@@ -75,54 +71,36 @@ function App() {
     }
   };
 
-  const handlePrev = () => {
-    if (activeColumn > 0) scrollToColumn(activeColumn - 1);
-  };
-
-  const handleNext = () => {
-    if (activeColumn < COLUMNS.length - 1) scrollToColumn(activeColumn + 1);
-  };
-
   return (
     <div className="app-wrapper">
       <Header onShowHistory={() => setShowHistory(true)} orderCount={orders.length} />
 
       <div className="app-container" ref={scrollRef}>
-        <Menu onAddItem={handleAddItem} />
+        <Menu
+          onAddItem={handleAddItem}
+          onNext={() => scrollToColumn(1)}
+        />
         <Cart
           cartItems={cartItems}
           onIncrease={handleIncrease}
           onDecrease={handleDecrease}
           onRemove={handleRemove}
+          onNext={() => scrollToColumn(2)}
+          onPrev={() => scrollToColumn(0)}
         />
         <Invoice
           cartItems={cartItems}
           selectedState={selectedState}
           onStateChange={setSelectedState}
+          onNext={() => scrollToColumn(3)}
+          onPrev={() => scrollToColumn(1)}
         />
         <Payment
           cartItems={cartItems}
           selectedState={selectedState}
           onOrderComplete={handleOrderComplete}
+          onPrev={() => scrollToColumn(2)}
         />
-      </div>
-
-      <div className="mobile-nav">
-        <button className="nav-arrow" onClick={handlePrev} disabled={activeColumn === 0}>
-          ‹
-        </button>
-        <div className="pagination-dots">
-          {COLUMNS.map((col, index) => (
-            <button
-              key={col}
-              className={`dot ${activeColumn === index ? 'active' : ''}`}
-              onClick={() => scrollToColumn(index)}
-            />
-          ))}
-        </div>
-        <button className="nav-arrow" onClick={handleNext} disabled={activeColumn === COLUMNS.length - 1}>
-          ›
-        </button>
       </div>
 
       {showHistory && (

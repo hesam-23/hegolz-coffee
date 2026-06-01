@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import menuData from '../data/menuData';
 import '../styles/Menu.css';
 
-function Menu({ onAddItem }) {
+function Menu({ onAddItem, onNext }) {
   const [activeCategory, setActiveCategory] = useState('Coffee');
 
   return (
     <div className="menu-column">
-      <h2>Menu</h2>
+      <div className="column-header">
+        <h2>Menu</h2>
+        <button className="nav-next mobile-only" onClick={onNext}>Next →</button>
+      </div>
 
       <div className="category-tabs">
         {Object.keys(menuData).map((category) => (
